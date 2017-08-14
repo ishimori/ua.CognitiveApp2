@@ -1,0 +1,72 @@
+<ons-page id="camera">
+
+  <ons-toolbar>
+    <div class="left">
+     <ons-toolbar-button ng-click="menu.toggleMenu()"><ons-icon icon="bars"></ons-icon></ons-toolbar-button>
+    </div>
+    <div class="center">カメラ</div>
+  </ons-toolbar>
+  
+    <p style="text-align: center;">
+        Azure 顔認識
+        <table border="0px" width="100%" id="face_result_table"></table>
+<!--        
+        <table border="0px" width="100%">
+        <tr>
+            <td width="50%">
+                <ul id="face_result"></ul>
+            </td>
+            <td align="center">
+                実年齢<BR>
+                <input type="number" id="real_age" style="width:50px;height:40px; font-size:20px" /><BR>
+                <ons-button onclick="entry()">エントリ</ons-button>
+            </td>
+        </tr>
+        </table>
+-->        
+        <!-- <ul id="face_result"></ul> -->
+
+        <!-- 解像度圧縮後の画像を表示 -->
+        <img id="face_image" hidden="true"/>
+        
+        <!-- canvasは解像度圧縮に使うのみ。Azureにパスするのは img -->
+        <canvas id="canvas"></canvas>
+        
+        <ons-button id="btn_camera" modifier="large" onclick="camera_read()" style="background-color:red;">カメラ起動</ons-button>
+        <ons-button id="btn_azure" modifier="large" style="display:none;background-color:green" onclick="call_face_api()" >Azure年齢推定</ons-button>
+        <ons-button id="btn_kintone" modifier="large" style="display:none"  onclick="kintone_entry()" >kintone登録</ons-button>
+        <HR>
+        <table>
+        <tr width='100%'>
+            <td>
+                <ons-button onclick="camera_read()" style="background-color:red;">カメラ起動</ons-button>
+            </td>
+            <td>
+                <ons-button onclick="call_face_api();"style="background-color:green;">Azure年齢</ons-button>
+            </td>
+            <td>
+                <ons-button onclick="kintone_entry()">kintone登録</ons-button>
+            </td>
+        </tr>
+<!--        
+        <tr>
+            <td>
+                <ons-button onclick="test_search()">TEST検索</ons-button>
+            </td>
+            <td>
+                <ons-button onclick="test_new_record()">TEST新規</ons-button>
+            </td>
+            <td>
+                <ons-button onclick="test_upload()">TEST Upload</ons-button>
+            </td>
+        </tr>
+-->        
+        </table>
+<HR>
+        結果表示用エリア<BR>
+        <textarea id="responseTextArea" style="width:280px; height:300px;"></textarea>
+        <BR>
+
+        </p>
+
+</ons-page>

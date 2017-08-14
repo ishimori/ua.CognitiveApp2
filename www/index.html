@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="components/loader.js"></script>
+    <!--
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    -->
+
+    <script src="js/test1.js"></script>
+    <script src="js/camera.js"></script>
+    <script src="js/score.js"></script>
+    <script src="js/setting.js"></script>
+    <script src="js/tabbar.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDpJN8WKdstogKPPX0WDqZi5-4A3A3tuoI"
+            type="text/javascript"
+            charset="UTF-8">
+    </script>
+
+
+    <link href="https://cdn.rawgit.com/OnsenUI/OnsenUI/1.2.2/build/css/onsenui.css" rel="stylesheet"/>
+    <link href="https://cdn.rawgit.com/OnsenUI/OnsenUI/1.2.2/build/css/onsen-css-components.css" rel="stylesheet"/>
+    <script src="https://cdn.rawgit.com/OnsenUI/OnsenUI/1.2.2/build/js/angular/angular.min.js"></script>
+    <script src="https://cdn.rawgit.com/OnsenUI/OnsenUI/1.2.2/build/js/onsenui.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <script>ons.bootstrap();</script>
+    
+<script>
+    ons.ready(function() {
+        console.log("Onsen UI is ready!");
+        
+        // 現在位置取得
+        setLocation();
+                
+        nav.on("postpush",function(event){
+            //console.log(e.enterPage);
+            //alert(event.enterPage.options);
+            //alert(e.enterPage);
+            //alert(event.enterPage.name);
+            switch (event.enterPage.name){
+                case "score_detail.html":
+                    
+                    showScoreDetail(event.enterPage.options.id);
+                    //alert('test');
+                    //alert(event.enterPage.options);
+                    //alert(event.enterPage.options.id);
+                    //$('#score_detail').innerText= event.enterPage.options.id;
+                    /*
+                    $("#score_detail").append("<li>" + "id =" + event.enterPage.options.id + "</li>");
+                    $("#score_detail").append("<li>" + "笑顔 =" + "70.4" + "</li>");
+                    $("#score_detail").append("<li>" + "年齢 =" + "28" + "</li>");
+                    $("#score_detail").append("<li>" + "<img width='300px' src='http://date.ict.miyagi.jp/wp-content/uploads/2017/03/02yuzuru_ishimori_main.jpg' />" + "</li>");
+                    //showId();
+                    */
+                    break;
+                default:
+                    //alert(event.enterPage.name);
+                    break;
+            }
+        });
+      
+    });
+
+</script>
+    
+    
+</head>
+<body>
+    <!-- ここにhtmlを記述せず、別ファイルにすることで、nav変数が他HTMLで使えるようになる-->
+    <ons-navigator var="nav" page="index2.html"></ons-navigator>
+
+</body>
+</html>

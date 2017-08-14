@@ -1,0 +1,24 @@
+<ons-page id="menu">
+  <ons-list>
+    <ons-list-item modifier="chevron" onclick="tabbar.setActiveTab(0), menu.closeMenu()">
+      Home
+    </ons-list-item>
+    <ons-list-item modifier="chevron" onclick="tabbar.setActiveTab(1), menu.closeMenu()">
+      カメラ
+    </ons-list-item>
+    <ons-list-item modifier="chevron" onclick="tabbar.setActiveTab(2), menu.closeMenu()">
+      スコア確認
+    </ons-list-item>
+    <ons-list-item modifier="chevron" onclick="tabbar.setActiveTab(3), menu.closeMenu()">
+      地図
+    </ons-list-item>
+    <!--<ons-list-item modifier="chevron" ng-click="nav.pushPage('test1.html'), menu.closeMenu()">-->
+    <ons-list-item modifier="chevron" onclick="menu.closeMenu(),nav.pushPage('settings.html')">
+      設定
+    </ons-list-item>
+    <ons-list-item modifier="chevron" onclick="menu.closeMenu(),nav.pushPage('other.html')">
+      その他
+    </ons-list-item>
+    
+  </ons-list>
+</ons-page>
