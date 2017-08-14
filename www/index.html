@@ -42,7 +42,9 @@
             switch (event.enterPage.name){
                 case "score_detail.html":
                     // 詳細ページ表示
-                    showScoreDetail(event.enterPage.options.id,event.enterPage.options.title);
+                    showScoreDetail(event.enterPage.options.id
+                                   ,event.enterPage.options.title
+                                   ,event.enterPage.options.filekey);
                     break;
                 default:
                     //alert(event.enterPage.name);
